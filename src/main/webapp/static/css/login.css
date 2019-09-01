@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #f3f3f4;
+}
+h2{
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+
+}
+.login{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    margin: 100px auto;
+    border-radius: 5px;
+}
+.login .num{
+    width: 350px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    border: none;
+
+}
+.login .psw{
+    width: 350px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    border: none;
+}
+.login .sub{
+    width: 350px;
+    height: 30px;
+    background-color: #5181ff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    margin-left: 20px;
+}

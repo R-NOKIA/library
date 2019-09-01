@@ -1,0 +1,200 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url("../images/3.jpg");
+    background-size: 1500px;
+}
+li,a{
+    font-size: 14px;
+}
+/*导航栏样式*/
+.nav{
+    width:100%;
+    height:400px;
+    /*background-image: url("img/4.jpg");*/
+    /*background-size: cover;*/
+
+}
+
+.nav .notice{
+    width:90%;
+    height: 300px;
+    background:rgba(255, 255, 255, 0.5);
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.nav .notice ul{
+    list-style: none;
+
+}
+.nav .notice p{
+    padding: 15px;
+    font-size: large;
+}
+.nav .notice ul li{
+    padding-left: 10px;
+    line-height:20px;
+}
+/*留言信息部分样式*/
+.mes{
+    width:100%;
+    height: 1500px;
+    position: relative;
+
+
+}
+.mes .sendMes{
+    color: #eeecea;
+    font-size: 20px;
+    font-weight: 800;
+    position: absolute;
+    left:65px;
+    top: 15px;
+}
+.add{
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    position: relative;
+}
+.add .text{
+    display: inline-block;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 20px;
+    outline: none;
+}
+.add .send{
+    width: 80px;
+    height: 30px;
+    background-color: #f6ae57;
+    position: absolute;
+    bottom:5px;
+    right: 160px;
+    border: none;
+}
+
+.mes .mes_list{
+    width: 100%;
+    /*background-color: yellow;*/
+    box-sizing: border-box;
+    text-align: center;
+    /*margin-top: 20px;*/
+    /*border-bottom: 5px solid #f6ae57;*/
+
+
+}
+.mes .mes_list .Mes{
+    padding-top: 20px;
+
+}
+.mes .mes_list .Mes li{
+    width: 90%;
+    height: 100px;
+    /*background-color: pink;*/
+    margin-left: 60px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 20px;
+    list-style: none;
+    position: relative;
+
+}
+.mes .mes_list .list_left{
+    width: 15%;
+    height: 100%;
+    background-color: #f3f3f4;
+    float:left;
+    /*position: absolute;*/
+    clear:both;
+
+}
+.mes .mes_list .list_left .pic{
+    width: 80px;
+    height: 80px;
+    background-color: red;
+}
+.mes .mes_list .list_left span{
+    position: absolute;
+    top: 10px;
+    left: 90px;
+}
+.mes .mes_list .list_right{
+    width: 80%;
+    height: 100%;
+    background-color: #f3f3f4;
+    float: right;
+    padding:10px 20px;
+    box-sizing: border-box;
+}
+.mes .mes_list .list_right .list_rightText{
+    line-height: 20px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.mes .mes_list .list_right .list_rightInfo{
+    width:100%;
+    overflow: hidden;
+    /*background-color: red;*/
+
+}
+.mes .mes_list .list_right .list_rightInfo .list_rightTime{
+    float: left;
+
+}
+.mes .mes_list .list_right .list_rightInfo .list_rightHandle{
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+}
+/*.mes .mes_list .list_right .list_rightInfo .list_rightHandle img{*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+/*}*/
+.mes .mes_list .list_right .list_rightHandle a img{
+    display: inline-block;
+
+    float: right;
+    padding-right: 20px;
+}
+.mes .page{
+    width: 90%;
+    height: 40px;
+    background-color: #5181ff;
+     text-align: center;
+    line-height: 40px;
+    margin:50px 5%;
+}
+.mes .page .page_right{
+    float: right;
+
+}
+
+.mes .page .page_right a{
+    text-decoration: none;
+    color: #f3f3f4;
+
+}
+.mes .page .page_current{
+    font-size: 14px;
+    font-weight: 700;
+
+
+}
+/*底部部分*/
+/*联系我们部分*/
+.contact{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #ccc;
+    position: fixed;
+    top:20px;
+    right:0;
+}

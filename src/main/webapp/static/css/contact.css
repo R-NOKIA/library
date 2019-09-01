@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    background-image: url("../images/1.jpg");
+    background-size:cover ;
+}
+.contact{
+    width: 1000px;
+    height: 500px;
+    /*background-color: red;*/
+    margin: 30px auto;
+    border-radius: 10px;
+}
+.contact .contact_up{
+    width: 1000px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+    opacity:0.8;
+
+}
+.contact .contact_up .contact_teacher{
+    width: 1000px;
+    height: 50px;
+}
+.contact .contact_up .contact_teacher p{
+    line-height: 50px;
+    display: inline-block;
+    padding-left: 20px;
+}
+ .contact_teacher img{
+    height: 28px;
+    padding-right: 30px;
+    padding-top: 20px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+.contact .contact_up .contact_group p{
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.contact .contact_up .contact_group img{
+    height: 22px;
+    padding-top: 20px;
+    padding-left: 26px;
+
+}
+
+.contact .contact_down{
+    width: 1000px;
+    height: 400px;
+    background-color: white;
+    opacity:0.8;
+    margin-top: 20px;
+    border-radius: 20px;
+
+}
+.contact .contact_down .left{
+    float:left;
+    list-style: none;
+    padding-left: 10px;
+}
+/*.contact .contact_down .left li{*/
+    /*padding-top: 30px;*/
+/*}*/
+.contact .contact_down .left p{
+    width: 180px;
+    line-height: 40px;
+    background-color: #94b7e6;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+.contact .contact_down .medium1{
+    float:left;
+    list-style: none;
+    padding-left: 20px;
+}
+.contact .contact_down .medium1:nth-child(1) p{
+    width: 200px;
+}
+.contact .contact_down .medium1 p{
+    width: 180px;
+    line-height: 40px;
+    background-color: #94b7e6;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+.contact .contact_down .medium2{
+    float:left;
+    list-style: none;
+    padding-left: 20px;
+}
+.contact .contact_down .medium2 p{
+    width: 180px;
+    line-height: 40px;
+    background-color: #94b7e6;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.contact .contact_down .right{
+    float:right;
+    list-style: none;
+    margin-right: 20px;
+
+}
+/*.contact .contact_down .right li{*/
+    /*padding-top: 30px;*/
+/*}*/
+.contact .contact_down .right p{
+    width: 180px;
+    line-height: 40px;
+    background-color: #94b7e6;
+    margin-top: 30px;
+    border-radius: 5px;
+    text-align: center;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.web.dao.UserDao">
+    <select id="getmessage" parameterType="Integer" resultType="com.web.model.Message">
+        select * from message where id=#{id}
+    </select>
+
+    <insert id="insertmessage" parameterType="com.web.model.Message">
+        insert into message (id, user_id, message) values
+        (#{id},#{user_id},#{message})
+    </insert>
+
+    <delete id="deletemessage" parameterType="Integer">
+        delete from message where id=#{id}
+    </delete>
+
+    <update id="updatemessage" parameterType="com.web.model.Message">
+        update message
+        <set>
+            <if test="message!=null">
+                message=#{message},
+            </if>
+        </set>
+    </update>
+</mapper>

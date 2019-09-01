@@ -1,0 +1,70 @@
+.font-input{
+    color: white;
+}
+.font-buttom{
+    font-size:medium;
+    padding: 5px;
+    padding-top: 5px;
+    padding-left: 3px;
+}
+.font-icon{
+    color: white;
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+.font-position{
+    padding: 10px;
+    padding-left: 15px;
+}
+.crumbs>li+li:before{
+    color: white;
+    content: "|";
+    padding:0 5px;
+    size: 10px;
+}
+.top{
+    margin-top: 48px;
+}
+.nav-buttom{
+    margin-top: 60px;
+}
+.mes{
+    margin-top: 40px;
+
+}
+.font{
+  margin-top: 60px;
+    font-family: KaiTi;
+    font-size: x-large;
+}
+.nav-top{
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.navbar-top{
+    margin-right: 20px;
+    margin-top: 15px;
+    color: #0091cd;
+}
+.img-position{
+    margin-top:70px;
+}
+.li-position{
+    padding-top:20px;
+}
+.tab-top{
+    margin-top: 15px;
+}
+.tab-buttom{
+    margin-bottom:15px;
+}
+.page{
+    float: right;
+}
+.button-size{
+    font-size: xx-small;
+}
+li{
+    list-style: none;
+}

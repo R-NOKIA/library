@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.web.dao.UserDao">
+    <select id="getbook" parameterType="Integer" resultType="com.web.model.Book">
+        select * from book where id=#{id}
+    </select>
+
+    <insert id="insertbook" parameterType="com.web.model.Book">
+        insert into book (id, name, sort, status) values
+        (#{id},#{name},#{sort},#{status})
+    </insert>
+
+    <delete id="deletebook" parameterType="Integer">
+        delete from book where id=#{id}
+    </delete>
+
+    <update id="updatebook" parameterType="com.web.model.Book">
+        update book
+        <set>
+            <if test="user_id!=null">
+                user_id=#{user_id},
+            </if>
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="sort!=null">
+                sort=#{sort},
+            </if>
+            <if test="status!=null">
+                status=#{status},
+            </if>
+        </set>
+    </update>
+</mapper>
