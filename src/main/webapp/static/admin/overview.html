@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>概览</title>
+    <link rel="stylesheet" href="../libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../css/overview.css">
+
+</head>
+<body class="layui-layout-body" style="background-color: #f2f2f2">
+
+<div class="layui-card admin-header">
+    <div class="layui-breadcrumb" lay-fiter="breadcrumb" style="visibility: visible;margin-left: 20px">
+        <a href="#">主页</a>
+        <span lay-separator="-"></span>
+        <a href="#">概览</a>
+    </div>
+</div>
+<!--头部信息显示卡片-->
+<div class="layui-row layui-col-space15" style="margin-top: 10px;margin-left: 20px;margin-right: 20px">
+
+
+    <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                通知阅读量
+                <span class="layui-badge layui-bg-blue layuiadmin-badge">天</span>
+            </div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <p class="layuiadmin-big-font" id="orderNum">0</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                新增失物品招领
+                <span class="layui-badge layui-bg-blue layuiadmin-badge">天</span>
+            </div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <p class="layuiadmin-big-font" >0</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                新增留言
+                <span class="layui-badge layui-bg-blue layuiadmin-badge">天</span>
+            </div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <p class="layuiadmin-big-font" >0</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-sm6 layui-col-md3">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                搜索量
+                <span class="layui-badge layui-bg-blue layuiadmin-badge">天</span>
+            </div>
+            <div class="layui-card-body layuiadmin-card-list">
+                <p class="layuiadmin-big-font" >0</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layui-row layui-col-space15">
+    <!--数据可视化部分-->
+    <div  class="layui-card layui-col-lg7 layuiadmin-datashow">
+        <div class="layui-card-header">数据可视化</div>
+        <div class="layui-card-body" style="height: 500px">
+            <div id="main" style="height: 400px" ></div>
+        </div>
+    </div>
+    <div  class="layui-card layui-col-lg5 layuiadmin-datashow">
+        <div class="layui-card-header">最新留言</div>
+        <div class="layui-card-body" style="height: 500px">
+            <div id="mytable" ></div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="../libs/layui/layui.js"></script>
+<script src="../libs/echarts/echarts.min.js"></script>
+<script src="../libs/jquery/jquery.js"></script>
+<script src="../js/common.js"></script>
+
+<script>
+    layui.use(['element','table'], function(){
+        var element = layui.element;
+
+        var table = layui.table;
+
+        table.render({
+            elem: '#mytable'
+            ,url:'/json/overviewTable.json'
+            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,cols: [[
+                {field:'name', width:80, title: '姓名',sort:true}
+                ,{field:'time', width:130, title: '留言时间',sort:true}
+                ,{field:'info', width:300, title: '留言内容', sort: true}
+
+            ]]
+            ,height:400
+        });
+    });
+</script>
+
+<!--echarts相关脚本-->
+<script>
+
+    var myChart = echarts.init(document.getElementById('main'));
+
+    setTimeout(function () {
+
+        option = {
+            legend: {},
+            tooltip: {
+                trigger: 'axis',
+                showContent: false
+            },
+            dataset: {
+                source: [
+                    ['product', '2012', '2013', '2014', '2015', '2016', '2017'],
+                    ['通知阅读量', 41.1, 30.4, 65.1, 53.3, 83.8, 98.7],
+                    ['失物招领', 86.5, 92.1, 85.7, 83.1, 73.4, 55.1],
+                    ['留言', 24.1, 67.2, 79.5, 86.4, 65.2, 82.5],
+                    ['检索', 55.2, 67.1, 69.2, 72.4, 53.9, 39.1]
+                ]
+            },
+            xAxis: {type: 'category'},
+            yAxis: {gridIndex: 0},
+            grid: {top: '55%'},
+            series: [
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {
+                    type: 'pie',
+                    id: 'pie',
+                    radius: '30%',
+                    center: ['50%', '25%'],
+                    label: {
+                        formatter: '{b}: {@2012} ({d}%)'
+                    },
+                    encode: {
+                        itemName: 'product',
+                        value: '2012',
+                        tooltip: '2012'
+                    }
+                }
+            ]
+        };
+
+        myChart.on('updateAxisPointer', function (event) {
+            var xAxisInfo = event.axesInfo[0];
+            if (xAxisInfo) {
+                var dimension = xAxisInfo.value + 1;
+                myChart.setOption({
+                    series: {
+                        id: 'pie',
+                        label: {
+                            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                        },
+                        encode: {
+                            value: dimension,
+                            tooltip: dimension
+                        }
+                    }
+                });
+            }
+        });
+
+        myChart.setOption(option);
+    })
+
+</script>
+
+</html>
